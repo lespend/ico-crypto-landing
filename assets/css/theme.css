@@ -1,0 +1,84 @@
+/*!
+Template :	ICOCrypto @by Softnio
+Theme	 :  Default
+* Version	 :	2.1.0
+* Updated	 :	11/22/2022
+*/
+/*! WRITE YOUR CUSTOM STYLE **/
+
+/* Кастомизация select2 */
+.select-currency {
+    border: 1px solid #dbe4f7;
+    border-radius: 5px;
+}
+
+.select-currency .select2-selection .select2-selection__rendered {
+    color: #fff;
+    padding: 8px 5px;
+}
+
+.select-currency.select2 {
+    width: 20% !important;
+    min-width: 100px;
+}
+
+.select-currency .select2-selection .select2-selection__arrow:after {
+    padding: 0;
+    height: auto;
+    padding: 10px;
+}
+
+.select-currency .select2-selection--single {
+    height: auto;
+}
+
+/* Конвертер */
+.converter {
+    margin-top: -10px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.converter__field-group {
+    display: flex;
+    margin-top: 20px;
+}
+
+.converter--swaped .converter__field-group:nth-child(2) {
+    order: -1;
+}
+
+/* .converter__field-group:first-child {
+    margin-top: 0;
+} */
+
+.converter__field {
+    margin-left: 10px;
+}
+
+.converter__swap-button {
+    color: #eef3fc;
+    background: #f42f54;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 15px;
+    line-height: 21px;
+    font-size: .9em;
+    transition: all .4s;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(calc(-50% + 10px));
+}
+
+/* Навигация */
+.menu-btns__icon-btn {
+    color: #fff;
+}
+
+.menu-btns__icon-btn path {
+    fill: #fff;
+}
+
