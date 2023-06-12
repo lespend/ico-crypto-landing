@@ -6,6 +6,10 @@ Theme	 :  Default
 */
 /*! WRITE YOUR CUSTOM STYLE **/
 
+.is-transparent .header-main {
+    position: fixed !important;
+}
+
 /* Кастомизация select2 */
 .select-currency {
     border: 1px solid #dbe4f7;
@@ -39,10 +43,12 @@ Theme	 :  Default
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .converter__field-group {
     display: flex;
+    width: 100%;
     margin-top: 20px;
 }
 
@@ -73,6 +79,13 @@ Theme	 :  Default
     transform: translateY(calc(-50% + 10px));
 }
 
+.converter__convert-button {
+    margin-top: 16px;
+    width: auto;
+    margin-left: auto;
+    margin-right: 12px;
+}
+
 /* Навигация */
 .menu-btns__icon-btn {
     color: #fff;
@@ -82,3 +95,40 @@ Theme	 :  Default
     fill: #fff;
 }
 
+
+/* Секция преимущества */
+.benefits__list {
+    display: flex;
+    margin-left: -10px;
+}
+
+.benefits__item {
+    background-color: #f42f54;
+    padding: 20px 10px;
+    border-radius: 15px;
+    width: 100%;
+    margin-left: 10px;
+    text-align: center;
+    box-shadow: 0 5px 20px 0px rgba(255, 255, 255, 0.1);
+}
+
+.benefits__item i {
+    font-size: 2em;
+    color: #fff;
+}
+
+.benefits__text {
+    margin-top: 20px;
+    color: #fff !important;
+}
+
+.partners {
+    padding-bottom: 120px;
+}
+
+@media (max-width: 1600px) {
+    .header-menu {
+        flex-direction: column;
+        align-items: end;
+    }
+}
