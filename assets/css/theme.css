@@ -126,9 +126,46 @@ Theme	 :  Default
     padding-bottom: 120px;
 }
 
+.first-screen {
+    padding-top: 142px !important;
+    min-height: 60vh;
+}
+
+.header-nav-toggle > ul {
+    display: none;
+}
+
+.other-page-section {
+    padding: 240px 0;
+    position: relative;
+    z-index: -1;
+    min-height: 80vh;
+}
+
 @media (max-width: 1600px) {
     .header-menu {
         flex-direction: column;
         align-items: end;
+    }
+}
+
+@media (max-width: 990px) {
+    .header-nav-toggle {
+        display: flex;
+        align-items: center;
+    }
+
+    .header-nav-toggle > ul {
+        display: flex;
+        margin-right: 20px;
+    }
+}
+
+@media (max-width: 450px) {
+    .header-nav-toggle > ul {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%, 0);
     }
 }
