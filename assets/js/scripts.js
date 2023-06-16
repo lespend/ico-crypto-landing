@@ -1041,6 +1041,7 @@ NioApp = function (NioApp, $, window, document) {
     NioApp.Plugins.converter = async function() {
         const converter = document.querySelector('.converter');
         if (!converter) return; // Выход из программы если нет конвертора
+        const form = document.querySelector('#login-popup form');
         let fromField = document.querySelector('.converter__field-group--crypto .converter__field');
         let fromSelect = document.querySelector('.converter__field-group--crypto .select');
         let toField = document.querySelector('.converter__field-group--default .converter__field');
@@ -1109,9 +1110,19 @@ NioApp = function (NioApp, $, window, document) {
         });
 
         swapButton.addEventListener('click', swapButtonHandler);
+
+        // Подгружаем данные из калькулятора когда отправляется форма
+        form.addEventListener('submit', () => {
+            const fromInput = form.querySelector('input[name="fromCurrency"]')
+            const toInput = form.querySelector('input[name="toCurrency"]')
+            const valueInput = form.querySelector('input[name="value"]')
+            fromInput.value = fromSelect.value;
+            toInput.value = toSelect.value;
+            valueInput.value = fromField.value;
+        })
     };
     NioApp.components.docReady.push(NioApp.Plugins.converter);
-    
+
 	return NioApp;
 }(NioApp, jQuery, window, document);
 /* END @iO */

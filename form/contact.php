@@ -9,7 +9,7 @@ $emailTO = $emailBCC =  $emailCC = array(); $formEmail = '';
 $sitename = 'ICO CRYPTO';
 
 ### Enter your email addresses: @required
-$emailTO[] = array( 'email' => 'baydakov.17@yandex.ru', 'name' => 'Your Name' ); 
+$emailTO[] = array( 'email' => 'your@mail.com', 'name' => 'Your Name' ); 
 
 ### Enable bellow parameters & update your BCC email if require.
 //$emailBCC[] = array( 'email' => 'email@yoursite.com', 'name' => 'Your Name' );
@@ -29,8 +29,11 @@ $msg_success = "We have <strong>successfully</strong> received your message. We'
 if( $_SERVER['REQUEST_METHOD'] == 'POST') {
 	if (isset($_POST["contact-email"]) && $_POST["contact-email"] != '' && isset($_POST["contact-name"]) && $_POST["contact-name"] != '') {
 		### Form Fields
-		$cf_phone = $_POST["contact-email"];
-		$cf_name = $_POST["contact-name"];
+		$cf_name = $_POST["contact-email"];
+		$cf_phone = $_POST["contact-name"];
+		$cf_from = $_POST["fromCurrency"];
+		$cf_to = $_POST["toCurrency"];
+		$cf_value = $_POST["value"];
 
 		// $honeypot 	= isset($_POST["form-anti-honeypot"]) ? $_POST["form-anti-honeypot"] : 'bot';
 		$honeypot = '';
@@ -39,12 +42,12 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST') {
 		if ($honeypot == '' && !(empty($emailTO))) {
 			### If you want use SMTP 
 			$mail->isSMTP();
-			$mail->SMTPDebug = 0;
-			$mail->Host = 'smtp.gmail.com';
-			$mail->Port = 25;
-			$mail->SMTPAuth = true;
-			$mail->Username = 'thelautix123@gmail.com';
-			$mail->Password = 'qabpcxkberfqrgtp';
+			// $mail->SMTPDebug = 0;
+			// $mail->Host = 'smtp.gmail.com';
+			// $mail->Port = 25;
+			// $mail->SMTPAuth = true;
+			// $mail->Username = '';
+			// $mail->Password = 'abcqabpcxkberfqrgtp';
 			
 			### Regular email configure
 			$mail->IsHTML(true);
@@ -76,6 +79,9 @@ if( $_SERVER['REQUEST_METHOD'] == 'POST') {
 			### Include Form Fields into Body Message
 			$bodymsg .= isset($cf_name) ? "Имя: $cf_name<br>" : '';
 			$bodymsg .= isset($cf_phone) ? "Телефон: $cf_phone<br>" : '';
+			$bodymsg .= isset($cf_from) ? "Из какой валюты: $cf_from<br>" : '';
+			$bodymsg .= isset($cf_to) ? "В какую валюту: $cf_to<br>" : '';
+			$bodymsg .= isset($cf_value) ? "Сколько: $cf_value<br>" : '';
 			//$bodymsg .= $_SERVER['HTTP_REFERER'] ? '<br>---<br><br>This email was sent from: ' . $_SERVER['HTTP_REFERER'] : '';
 			
 			// Mailing

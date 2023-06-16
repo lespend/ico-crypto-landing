@@ -599,6 +599,9 @@
                     <div class="ath-body bg-theme tc-light">
                         <h5 class="ath-heading title">Обменять криатовалюту <small class="tc-default">форма для заполнения</small></h5>
                         <form action="form/contact.php" method="post">
+                            <input type="hidden" name="fromCurrency">
+                            <input type="hidden" name="toCurrency">
+                            <input type="hidden" name="value">
                             <div class="field-item">
                                 <div class="field-wrap">
                                     <input type="text" name="contact-email" class="input-bordered" placeholder="Ваше имя">
